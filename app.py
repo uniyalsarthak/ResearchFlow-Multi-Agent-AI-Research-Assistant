@@ -75,11 +75,9 @@ topic = st.text_input(
 )
 run_btn = st.button(" Run Research Pipeline", use_container_width=True)
 
-st.caption("Try: LLM agents 2025 · CRISPR gene editing · Fusion energy progress")
-
 
 # ── Pipeline status ───────────────────────────────────────────────────────────
-st.markdown('<div class="section-heading">Pipeline</div>', unsafe_allow_html=True)
+# st.markdown('<div class="section-heading">Pipeline</div>', unsafe_allow_html=True)
 
 r = st.session_state.results
 steps = [
@@ -89,16 +87,16 @@ steps = [
     ("critic", " Critic Chain", "Reviews & scores the report"),
 ]
 
-cols = st.columns(4)
-for i, (key, title, desc) in enumerate(steps):
-    with cols[i]:
-        if key in r:
-            st.success(f"{title}\n\n✓ Done")
-        elif st.session_state.running:
-            st.info(f"{title}\n\n● Running…")
-        else:
-            st.caption(f"{title}\n\nWaiting")
-        st.caption(desc)
+# cols = st.columns(4)
+# for i, (key, title, desc) in enumerate(steps):
+#     with cols[i]:
+#         if key in r:
+#             st.success(f"{title}\n\n✓ Done")
+#         elif st.session_state.running:
+#             st.info(f"{title}\n\n● Running…")
+#         else:
+#             st.caption(f"{title}\n\nWaiting")
+#         st.caption(desc)
 
 
 # ── Run pipeline ──────────────────────────────────────────────────────────────
@@ -202,4 +200,4 @@ if r:
 
 
 # ── Footer ────────────────────────────────────────────────────────────────────
-st.markdown('<div class="notice">ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit</div>', unsafe_allow_html=True)
+# st.markdown('<div class="notice">ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit</div>', unsafe_allow_html=True)
